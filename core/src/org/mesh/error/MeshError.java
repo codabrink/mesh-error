@@ -20,8 +20,6 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.BoundingBox;
 import com.badlogic.gdx.graphics.g3d.utils.shapebuilders.BoxShapeBuilder;
 
-import javax.swing.Box;
-
 public class MeshError extends ApplicationAdapter {
 	private PerspectiveCamera camera;
 	private ModelBatch modelBatch;
