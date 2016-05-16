@@ -21,17 +21,17 @@ import com.badlogic.gdx.math.collision.BoundingBox;
 import com.badlogic.gdx.graphics.g3d.utils.shapebuilders.BoxShapeBuilder;
 
 public class MeshError extends ApplicationAdapter {
-	private PerspectiveCamera camera;
-	private ModelBatch modelBatch;
-	private ModelBuilder modelBuilder = new ModelBuilder();
+    private PerspectiveCamera camera;
+    private ModelBatch modelBatch;
+    private ModelBuilder modelBuilder = new ModelBuilder();
     private Model model1, model2;
     private ModelInstance modelInstance1, modelInstance2;
-	private Environment environment = new Environment();
+    private Environment environment = new Environment();
 
-	@Override
-	public void create () {
+    @Override
+    public void create () {
         camera = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		camera.position.set(0f, 0f, 50f);
+        camera.position.set(0f, 0f, 50f);
         camera.fieldOfView = 60;
         camera.lookAt(0, 0, 0);
         camera.near = 1f;
@@ -65,16 +65,16 @@ public class MeshError extends ApplicationAdapter {
         modelInstance1.transform.set(new Matrix4().setTranslation(0, 0, 0));
         modelInstance2 = new ModelInstance(model2);
         modelInstance2.transform.set(new Matrix4().setTranslation(15, 15, 10));
-	}
+    }
 
-	@Override
-	public void render () {
+    @Override
+    public void render () {
         camera.update();
         Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         modelBatch.begin(camera);
         modelBatch.render(modelInstance1, environment);
         modelBatch.render(modelInstance2, environment);
         modelBatch.end();
-	}
+    }
 }
