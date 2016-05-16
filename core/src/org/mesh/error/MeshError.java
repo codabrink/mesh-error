@@ -41,12 +41,12 @@ public class MeshError extends ApplicationAdapter {
         modelBatch = new ModelBatch();
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, .4f, .4f, .4f, 1));
-        environment.add(new PointLight().set(Color.WHITE, 0, 0, 50, 500));
+        environment.add(new PointLight().set(Color.WHITE, 15, 15, 20, 50));
 
         modelBuilder.begin();
         MeshPartBuilder meshPartBuilder = modelBuilder.part("box1",
         GL20.GL_TRIANGLES, Usage.Position | Usage.Normal,
-                new Material(ColorAttribute.createDiffuse(Color.WHITE)));
+                new Material(ColorAttribute.createDiffuse(Color.RED)));
 
         BoundingBox bounds;
         Vector3 min, max;
